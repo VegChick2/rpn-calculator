@@ -5,6 +5,6 @@ before_script:
   - pip install python-coveralls
   - pip install coverage
 script:
-  - coverage run -m unittest test_rpn
+  - coverage run --include rpn.py -m unittest test_rpn
 after_success:
   - coveralls
