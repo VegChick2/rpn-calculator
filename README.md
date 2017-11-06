@@ -6,5 +6,7 @@
 This is a rpn calculator powered by python3.
 
 example:
-1 1 + 
+
+1 1 +
+ 
 2
