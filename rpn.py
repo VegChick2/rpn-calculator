@@ -1,4 +1,8 @@
+import logging
 import operator
+import readline
+logging.basicConfig(level=logging.DEBUG)
+
 
 
 operators = {
@@ -21,7 +25,7 @@ def calculate(myarg):
             arg1 = stack.pop()
             result = function(arg1, arg2)
             stack.append(result)
-        print(stack)
+            logging.debug(stack)
     if len(stack) != 1:
         raise TypeError("Too many parameters")
     return stack.pop()
@@ -30,6 +34,7 @@ def main():
     while True:
         result = calculate(input("rpn calc> "))
         print("Result: ", result)
+
 
 if __name__ == '__main__':
     main()
