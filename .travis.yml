@@ -3,8 +3,11 @@ python:
   - "3.5"
 # command to run tests
 before_script:
+  - pip install -r test_requirements.txt --use-mirrors
   - pip install python-coveralls
+  - pip install coverage
 script:
   - python3 -m unittest
 after_success:
+  - coverage run test_rpn.py
   - coveralls
